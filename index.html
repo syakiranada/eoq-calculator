@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator EOQ UMKM</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-container">
+        <img
+          src="logo-undip.png"
+          alt="Logo Universitas Diponegoro"
+          class="logo"
+        />
+        <img
+          src="logo-desa-banyuanyar.png"
+          alt="Logo Desa Banyuanyar"
+          class="logo"
+        />
+      </div>
+
+      <h1>Kalkulator EOQ untuk UMKM</h1>
+      <p class="subtitle">
+        Hitung jumlah pemesanan bahan baku atau produksi optimal untuk usaha
+        Anda.
+      </p>
+
+      <div class="input-section">
+        <h2>Masukkan Data</h2>
+
+        <label for="demand">
+          Jumlah kebutuhan selama 1 tahun <span class="label-hint">(D)</span>:
+        </label>
+        <input
+          type="number"
+          id="demand"
+          value="1000"
+          min="0"
+          placeholder="Contoh: 1000 botol"
+        />
+
+        <label for="orderCost">
+          Biaya untuk sekali produksi/pemesanan
+          <span class="label-hint">(K)</span>:
+        </label>
+        <input
+          type="number"
+          id="orderCost"
+          value="50"
+          min="0"
+          placeholder="Contoh: 50000 rupiah"
+        />
+
+        <label for="holdingCost">
+          Biaya penyimpanan per unit per tahun
+          <span class="label-hint">(Ch)</span>:
+        </label>
+        <input
+          type="number"
+          id="holdingCost"
+          value="2"
+          min="0"
+          placeholder="Contoh: 2000 rupiah"
+        />
+
+        <label for="unitPrice">
+          Harga beli per unit bahan baku (opsional)
+          <span class="label-hint">(P)</span>:
+        </label>
+        <input
+          type="number"
+          id="unitPrice"
+          value="10"
+          min="0"
+          placeholder="Contoh: 10000 rupiah"
+        />
+
+        <button onclick="hitungEOQ()">Hitung</button>
+      </div>
+
+      <div class="result-section">
+        <h2>Hasil Perhitungan</h2>
+        <p>
+          <strong>Jumlah produksi/pemesanan optimal (Q*):</strong>
+          <span id="qStar"></span> unit per pemesanan
+        </p>
+        <p>
+          <strong>Waktu antar pemesanan (T*):</strong>
+          <span id="tStar"></span> tahun / <span id="tStarDays"></span> hari
+        </p>
+        <p>
+          <strong>Frekuensi pemesanan per tahun (f*):</strong>
+          <span id="fStar"></span> kali
+        </p>
+        <p>
+          <strong>Total biaya (tanpa harga bahan baku):</strong> Rp
+          <span id="cqStarNoP"></span>
+        </p>
+        <p>
+          <strong>Total biaya (termasuk harga bahan baku):</strong> Rp
+          <span id="cqStarWithP"></span>
+        </p>
+      </div>
+
+      <div class="summary-section" id="summarySection"></div>
+
+      <div id="error-message" class="error"></div>
+
+      <footer>
+        <p>
+          Dibuat oleh Syakira Nada Nirwana &middot; KKN Desa Banyuanyar 2025
+          &middot; Universitas Diponegoro
+        </p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
