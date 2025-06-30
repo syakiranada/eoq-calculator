@@ -35,9 +35,15 @@
 
       <div class="input-section">
         <h2>Masukkan Data</h2>
+        <label for="timeUnit">Satuan waktu yang digunakan:</label>
+        <select id="timeUnit">
+          <option value="month">Per Bulan</option>
+          <option value="week">Per Minggu</option>
+          <!-- <option value="day">Per Hari</option> -->
+        </select>
 
         <label for="demand">
-          Jumlah kebutuhan selama 1 tahun <span class="label-hint">(D)</span>:
+          Jumlah kebutuhan <span class="label-hint">(D)</span>:
         </label>
         <input
           type="number"
@@ -60,7 +66,7 @@
         />
 
         <label for="holdingCost">
-          Biaya penyimpanan per unit per tahun
+          Biaya penyimpanan per unit
           <span class="label-hint">(Ch)</span>:
         </label>
         <input
@@ -94,19 +100,20 @@
         </p>
         <p>
           <strong>Waktu antar pemesanan (T*):</strong>
-          <span id="tStar"></span> tahun / <span id="tStarDays"></span> hari
+          <span id="tStar"></span> / <span id="tStarDays"></span> hari
         </p>
         <p>
-          <strong>Frekuensi pemesanan per tahun (f*):</strong>
-          <span id="fStar"></span> kali
+          <strong>Frekuensi pemesanan (f*):</strong>
+          <span id="fStar"></span> <span id="fStarLabel"></span>
         </p>
         <p>
-          <strong>Total biaya (tanpa harga bahan baku):</strong> Rp
-          <span id="cqStarNoP"></span>
+          <strong>Total biaya (tanpa harga bahan baku) :</strong>
+          Rp<span id="cqStarNoP"></span>
         </p>
         <p>
-          <strong>Total biaya (termasuk harga bahan baku):</strong> Rp
-          <span id="cqStarWithP"></span>
+          <strong>Total biaya (termasuk harga bahan baku) :</strong> Rp<span
+            id="cqStarWithP"
+          ></span>
         </p>
       </div>
 

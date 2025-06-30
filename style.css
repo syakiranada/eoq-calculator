@@ -54,7 +54,16 @@ label {
   color: #555;
 }
 
-input[type="number"] {
+/* input[type="number"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+} */
+input[type="number"],
+select {
   width: calc(100% - 20px);
   padding: 10px;
   margin-bottom: 15px;
